@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">Building in Public</h1>
+  
+  <p class="intro">Hi, I'm Gary. I'm building low-capital, self-executable business ideas and documenting the journey. No funding, no team — just experiments, lessons, and occasional wins.</p>
+
+  <h2>Latest Posts</h2>
+  
+  <ul class="post-list">
+    {%- for post in site.posts limit:5 -%}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h3>
+      {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>
